@@ -1,0 +1,20 @@
+{% extends 'employees/base.html' %}
+
+{% block content %}
+
+<div class="container mt-4">
+    {% load mptt_tags %}
+    <ul class="list-group">
+        {% recursetree employees %}
+            <li class="list-group-item">
+                <a class="employee" href="{% url 'employee_detail' pk=node.pk %}">{{ node.surname }} {{ node.name }} {{ node.third_name }}</a> — <span class="position">{{ node.position }}</span>
+                {% if not node.is_leaf_node %}
+                    <ul class="children">
+                        {{ children }}
+                    </ul>
+                {% endif %}
+            </li>
+        {% endrecursetree %}
+    </ul>
+</div>
+{% endblock %}

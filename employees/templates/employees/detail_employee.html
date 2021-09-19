@@ -1,0 +1,26 @@
+{% extends 'employees/base.html' %}
+
+{% block content %}
+
+<div class="container mt-4">
+    <div class="card" style="width: 70rem;">
+        <div class="card-body">
+          <h5 class="card-title">{{ employee.surname }} {{ employee.name }} {{ employee.third_name }}</h5>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <span class="card-item">Начальник — </span>
+              {% if employee.chief %}
+                {{ employee.chief }}
+              {% else %}
+                Нет
+              {% endif %}
+          </li>
+          <li class="list-group-item"><span class="card-item">Должность — </span>{{ employee.position }}</li>
+          <li class="list-group-item"><span class="card-item">Зарплата — </span>{{ employee.salary }}</li>
+          <li class="list-group-item"><span class="card-item">Дата приема на работу — </span>{{ employee.employment_date|date:'d-m-Y' }}</li>
+        </ul>
+      </div>
+      <a class="btn btn-primary mt-3" href="{% url 'employees_list' %}">НАЗАД</a>
+</div>
+{% endblock %}

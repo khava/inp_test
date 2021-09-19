@@ -1,0 +1,30 @@
+body {
+    background-color: #F1F3F5 !important;
+}
+
+.navbar {
+    background-color: #878787 !important;
+    padding-left: 30px !important;
+    padding-top: 15px !important;
+    padding-bottom: 16px !important;
+}
+
+.position {
+    color: #878787;
+    text-transform: lowercase;
+}
+
+.employee {
+    color: black;
+    text-decoration: none;
+}
+
+.card-item {
+    color: #878787;
+}
+
+.btn {
+    background-color: #878787 !important;
+    border-color: #878787 !important;
+    width: 150px !important;
+}
